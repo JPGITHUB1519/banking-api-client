@@ -1,0 +1,41 @@
+/* 
+==========================================================================
+Styles Reset
+========================================================================== 
+*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* 
+==========================================================================
+Responsive Media Queries
+========================================================================== 
+*/
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
