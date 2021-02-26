@@ -10,9 +10,76 @@ Styles Reset
   margin: 0;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .container {
-  margin-top: 20px;
   text-align: center;
+}
+
+.transaction-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.transaction-form {
+  padding: 50px 20px;
+  width: 100%;
+}
+
+.form-group {
+  align-items: center;
+  display: flex;
+  margin-top: 25px;
+  justify-content: space-between;
+}
+
+.form-input {
+  font-size: 20px;
+  outline: none;
+  height: 40px;
+  width: 50%;
+}
+
+.form-button {
+  border: none;
+  background-color: #e74c3c;
+  cursor: pointer;
+  color: #FFFFFF;
+  height: 50px;
+  outline: none;
+  width: 100px;
+}
+
+.form-label {
+  /* font-weight: 700; */
+}
+
+.form-button:hover {
+  background-color: #f5593d;
+}
+
+.transfer-button {
+  margin: 35px auto 0 auto;
+}
+
+.errors-container {
+  background-color: #F8D7DA;
+  width: 100%;
+  padding: 20px 0px;
+}
+
+.errors-list {
+  margin-top: 25px;
+  list-style-position: inside;
+}
+
+.errors-list li {
+  margin-top: 20px;
 }
 
 /* 
@@ -23,7 +90,13 @@ Responsive Media Queries
 
 /* Medium devices (tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .transaction-form {
+    width: 50%;
+  }
 
+  .errors-container {
+    width: 50%;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -32,6 +105,18 @@ Responsive Media Queries
     margin-left: auto;
     margin-right: auto;
     width: 960px;
+  }
+
+  .transaction-form {
+    padding: 25px 20px;
+  }
+
+  .main-title {
+    font-size: 40px;
+  }
+
+  .form-label {
+    font-size: 17px;
   }
 }
 

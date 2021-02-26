@@ -4,14 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modern JS Setup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <!-- <link rel="stylesheet" href="css/styles.css"> -->
 </head>
 <body>
   <div class='container'>
-    <h1>Modern Vanilla JS Setup</h1>
+    <div class='transaction-section'>
+      <h1 class='main-title'>Bank Transaction</h1>
 
-    
-    <img src='img/image.png'>
+      <form class='transaction-form'>
+        <div class='form-group'>
+          <label class='form-label'>Transferor Account</label>
+          <input class='transferor-account-input form-input'>
+        </div>
+  
+        <div class='form-group'>
+          <label class='form-label'>Transferee Account</label>
+          <input class='transferee-account-input form-input'>
+        </div>
+        
+        <div class='form-group'>
+          <label class='form-label'>Amount</label>
+          <input class='amount-input form-input'>
+        </div>
+
+        <button class='transfer-button form-button'>Transfer</button>
+        
+      </form>
+
+      <div class='errors-container'>
+        <p>There are some errors: </p>
+        <ul class='errors-list'>
+          <li>Transferor account number is invalid</li>
+          <li>Transferee account number is invalid</li>
+        </ul>
+      </div>
+    </div>
   </div>
   <!-- <script src='./bundle.js'></script> -->
 </body>
