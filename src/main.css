@@ -67,19 +67,47 @@ body {
   margin: 35px auto 0 auto;
 }
 
-.errors-container {
-  background-color: #F8D7DA;
+.alert-container {
+  
   width: 100%;
   padding: 20px 0px;
 }
 
-.errors-list {
+.error-alert {
+  background-color: #F8D7DA;
+}
+
+.success-alert {
+  background-color: #D4EDDA;
+}
+
+.alert-list {
   margin-top: 25px;
   list-style-position: inside;
 }
 
+
 .errors-list li {
   margin-top: 20px;
+}
+
+
+/* 
+==========================================================================
+Utility
+========================================================================== 
+*/
+
+.not-bullet-point {
+  list-style-type: none;
+}
+
+.invalid-input {
+  border: 1px solid #ff0033;
+}
+
+.hidden {
+  display: none;
 }
 
 /* 
@@ -94,7 +122,7 @@ Responsive Media Queries
     width: 50%;
   }
 
-  .errors-container {
+  .alert-container {
     width: 50%;
   }
 }
