@@ -9,35 +9,75 @@
 </head>
 <body>
   <div class='container'>
-    <div class='transaction-section'>
-      <h1 class='main-title'>Bank Transaction</h1>
+    <div class='transaction-section section' id="transaction-section">
+      <h1 class='section-title'>Bank Transaction</h1>
 
-      <form class='transaction-form'>
+      <form class='transaction-form form'>
         <div class='form-group'>
           <label class='form-label'>Amount</label>
-          <input class='amount-input form-input'>
+          <input class='transaction-form__amount-input form-input'>
         </div>
 
         <div class='form-group'>
           <label class='form-label'>Transferor Account</label>
-          <input class='transferor-account-input form-input'>
+          <input class='transaction-form__transferor-account-input form-input'>
         </div>
   
         <div class='form-group'>
           <label class='form-label'>Transferee Account</label>
-          <input class='transferee-account-input form-input'>
+          <input class='transaction-form__transferee-account-input form-input'>
         </div>
         
-        <button class='transfer-button form-button'>Transfer</button>
+        <button class='transaction-form__transfer-button form-button'>Transfer</button>
         
       </form>
 
-      <div class='alert-container success-alert hidden'>
-        <p class='alert-title'></p>
-        <ul class='alert-list'>
+      <div class='transaction-alert-container success-alert hidden'>
+        <p class='transaction-alert-title alert-title'></p>
+        <ul class='transaction-alert-list alert-list'>
           <!-- <li>Transferor account number is invalid</li>
           <li>Transferee account number is invalid</li> -->
         </ul>
+      </div>
+    </div>
+
+    <div class='account-details-section section' id="account-details-section">
+      <h1 class='section-title'>Accounts Details</h1>
+
+      <form class='accounts-details-form form'>
+        <div class='form-group'>
+          <label class='form-label'>Account Number</label>
+          <input class='accounts-details-form__account-id-input form-input'>
+        </div>
+
+        <button class='accounts-details-form__search-button form-button'>Search</button>
+      </form>
+            
+      <div class='alert-container account-details__alert'>
+        <div class='alert-container'>
+          <div class='alert-body'>
+  
+          </div>
+        </div>
+      </div>
+      
+      <div class='card account-card hidden'>
+        <p class='card-detail'>
+          <span class='bold'>Account Name: </span>
+          <span class='account-card__name'></span>
+        </p>
+        <p class='card-detail'>
+          <span class='bold'>Amount: </span>
+          <span class='account-card__balance'></span>
+        </p>
+        <p class='card-detail'>
+          <span class='bold'>Customer Id: </span>
+          <span class='account-card__customer-id'></span>
+        </p>
+        <p class='card-detail'>
+          <span class='bold'>Date Opened: </span>
+          <span class='account-card__date-opened'></span>
+        </p>
       </div>
     </div>
   </div>

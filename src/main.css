@@ -18,15 +18,23 @@ body {
   text-align: center;
 }
 
-.transaction-section {
+.section {
+  height: 100vh;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
 }
 
-.transaction-form {
+.transaction-section {
+  /* background-color: #ecf0f1; */
+}
+
+.account-details-section {
+  /* background-color: #FEFAD4; */
+}
+
+.form {
   padding: 50px 20px;
   width: 100%;
 }
@@ -52,6 +60,7 @@ body {
   color: #FFFFFF;
   height: 50px;
   outline: none;
+  margin: 35px auto 0 auto;
   width: 100px;
 }
 
@@ -63,22 +72,32 @@ body {
   background-color: #f5593d;
 }
 
-.transfer-button {
-  margin: 35px auto 0 auto;
+.alert-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  width: 100%;
 }
 
-.alert-container {
-  
+.alert {
   width: 100%;
   padding: 20px 0px;
+}
+
+.success-alert {
+  background-color: #D4EDDA;
 }
 
 .error-alert {
   background-color: #F8D7DA;
 }
 
-.success-alert {
-  background-color: #D4EDDA;
+.warning-alert {
+  background-color: #FFF3CD;
+}
+
+.info-alert {
+  background-color: #D1ECF1;
 }
 
 .alert-list {
@@ -86,9 +105,25 @@ body {
   list-style-position: inside;
 }
 
+.alert-title {
+  font-weight: 700;
+  font-size: 20px;
+}
 
 .errors-list li {
   margin-top: 20px;
+}
+
+.card {
+  background-color: #f1f1f1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: initial;
+  padding: 16px;
+  margin-top: 15px;
+}
+
+.card-detail {
+  margin-top: 15px;
 }
 
 
@@ -110,6 +145,9 @@ Utility
   display: none;
 }
 
+.bold {
+  font-weight: 700;
+}
 /* 
 ==========================================================================
 Responsive Media Queries
@@ -118,11 +156,11 @@ Responsive Media Queries
 
 /* Medium devices (tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .transaction-form {
+  .form {
     width: 50%;
   }
 
-  .alert-container {
+  .alert {
     width: 50%;
   }
 }
@@ -135,11 +173,11 @@ Responsive Media Queries
     width: 960px;
   }
 
-  .transaction-form {
+  .form {
     padding: 25px 20px;
   }
 
-  .main-title {
+  .section-title {
     font-size: 40px;
   }
 
