@@ -5,6 +5,7 @@ export const DOM = {
   amountInput: document.querySelector('.transaction-form__amount-input'),
   transferButton: document.querySelector('.transaction-form__transfer-button'),
   // Transaction Alerts
+  transactionAlertContainer: document.querySelector('.transaction__alert'),
   transactionAlert: {
     container: document.querySelector('.transaction-alert-container'),
     title: document.querySelector('.transaction-alert-title'),

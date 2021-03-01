@@ -1,9 +1,5 @@
 import { DOM } from './base';
 
-// const sucessAlert() => {
-
-// }
-
 export const showAlert = (container, body, type='success') => {
   let alertTypeClass 
 
@@ -42,4 +38,22 @@ export const errorAlert = (container, body) => {
   showAlert(container, body, 'error');
 }
 
+// values can be object or array
+export const generateUnorderedList = (values) => {
+  let listArray = values;
 
+  // if type of values is object convert it to array
+  if (typeof values === 'object' && values !== null) {
+    listArray = Object.values(listArray);
+  }
+  
+  const DOMString = `
+    <ul class='alert-list'>
+      ${listArray.map(element => {
+        return `<li class='not-bullet-point'>${element}</li>`;
+      }).join('')}
+    </ul>
+  `;
+
+  return DOMString;
+};

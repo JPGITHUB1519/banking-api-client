@@ -101,7 +101,7 @@ body {
 }
 
 .alert-list {
-  margin-top: 25px;
+  /* margin-top: 15px; */
   list-style-position: inside;
 }
 

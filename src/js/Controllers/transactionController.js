@@ -1,6 +1,7 @@
 import { DOM } from '../views/base';
 import Transaction from '../models/Transaction';
 import  * as transactionView from '../views/transactionView';
+import * as alertView from '../views/alertView';
 
 export const makeTransaction = async () => {
   const amount = DOM.amountInput.value;
@@ -13,8 +14,21 @@ export const makeTransaction = async () => {
   if (transactionFormValidation) {
     const transactionModel = new Transaction(amount, transferorAccountId, transfereeAccountId);
     const transactionResult = await transactionModel.transfer();
-  
-    transactionView.showTransactionAlert(transactionResult);
+
+    if (transactionResult.transactionStatus === 'failed') {
+      alertView.errorAlert(
+        DOM.transactionAlertContainer, 
+        alertView.generateUnorderedList(transactionResult.message, 'There Are Some Errors')
+      );
+    } 
+
+    if (transactionResult.transactionStatus === 'successfull') {
+      alertView.successAlert(
+        DOM.transactionAlertContainer,
+        transactionView.successfullTransactionDOMString(transactionResult)
+      );
+    }
+    // transactionView.showTransactionAlert(transactionResult);
   }
 };
 
@@ -48,7 +62,7 @@ const validateTransactionForm = (amount, transferorAccountId, transfereeAccountI
   }
 
   if (Object.keys(errors).length > 0) {
-    transactionView.showErrorAlert(errorMessage, errors);
+    alertView.errorAlert(DOM.transactionAlertContainer, alertView.generateUnorderedList(errors));
     return false;
   }
 
