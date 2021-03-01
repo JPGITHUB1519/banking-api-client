@@ -10,6 +10,7 @@ export const findAccount = async () => {
 
   if (!accountId) {
     alertView.errorAlert(DOM.accountDetailsAlertContainer, `<p>Please enter an account number</p>`);
+    accountView.clearAccountCard();
     return;
   }
 
@@ -18,16 +19,11 @@ export const findAccount = async () => {
   if (accountData) {
     if (!('error' in accountData)) {
       accountView.displayAccountCard(accountData);
-      clearAlerts();
+      accountView.clearAlerts();
     } else {
       accountView.clearAccountCard();
       alertView.errorAlert(DOM.accountDetailsAlertContainer, `<p>${accountData.error}</p>`);
     }
   }
 };
-
-const clearAlerts = () => {
-  DOM.accountDetailsAlertContainer.innerHTML = '';
-};
-
 

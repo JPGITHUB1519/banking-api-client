@@ -14,3 +14,7 @@ export const clearAccountCard = () =>  {
   DOM.accountCard.customerId.textContent = '';
   DOM.accountCard.dateOpened.textContent = '';  
 };
+
+export const clearAlerts = () => {
+  DOM.accountDetailsAlertContainer.innerHTML = '';
+};
