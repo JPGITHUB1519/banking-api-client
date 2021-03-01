@@ -2,12 +2,20 @@ import { DOM } from './base';
 
 
 export const successfullTransactionDOMString = transactionData => {
-  const alertsDOMString = Object.entries(transactionData.data).map(element => {
+
+  const listItemsDomString = Object.entries(transactionData.data).map(element => {
     const [key, value] = element;
     return `<li class='not-bullet-point'><span class='bold'>${key}</span>: ${value}</li>`;
-  });
+  }).join('');
 
-  return alertsDOMString;
+  const alertDOMString = `
+    <ul class='alert-list'>
+      ${listItemsDomString}
+    </ul>
+  `;
+ 
+
+  return alertDOMString;
 };
 
 export const invalidInput = (input) => {
