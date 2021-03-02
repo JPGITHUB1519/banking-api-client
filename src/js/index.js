@@ -1,7 +1,7 @@
 import { DOM } from './views/base';
 import { API_URL } from './config';
-import  * as transactionController  from './Controllers/transactionController';
-import * as accountController from './Controllers/accountController';
+import  * as transactionController  from './controllers/transactionController';
+import * as accountController from './controllers/accountController';
 import "../main.css";
 
 
