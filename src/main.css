@@ -18,6 +18,7 @@ body {
   text-align: center;
 }
 
+/* secitons */
 .section {
   height: 100vh;
   align-items: center;
@@ -34,6 +35,7 @@ body {
   /* background-color: #FEFAD4; */
 }
 
+/* forms */
 .form {
   padding: 50px 20px;
   width: 100%;
@@ -72,6 +74,8 @@ body {
   background-color: #f5593d;
 }
 
+
+/* alerts  */
 .alert-container {
   display: flex;
   justify-content: center;
@@ -113,17 +117,44 @@ body {
   font-size: 20px;
 }
 
-
+/* Cards */
 .card {
   background-color: #f1f1f1;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   text-align: initial;
   padding: 16px;
-  margin-top: 15px;
+  margin-top: 25px;
+  width: 80%;
 }
 
 .card-detail {
   margin-top: 15px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.customer-details-container {
+  width: 100%;
+}
+
+.customer-details-info__customer-name {
+  font-size: 18px;
+}
+
+
+/* 
+==========================================================================
+Common
+========================================================================== 
+*/
+
+.subsection-title {
+  margin-top: 25px;
 }
 
 
@@ -148,6 +179,8 @@ Utility
 .bold {
   font-weight: 700;
 }
+
+
 /* 
 ==========================================================================
 Responsive Media Queries
@@ -156,6 +189,11 @@ Responsive Media Queries
 
 /* Medium devices (tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .card {
+    width: 40%;
+    margin-right: 20px;
+  }
+
   .form {
     width: 50%;
   }

@@ -2,6 +2,7 @@ import { DOM } from '../views/base';
 import Transaction from '../models/Transaction';
 import  * as transactionView from '../views/transactionView';
 import * as alertView from '../views/alertView';
+import * as validationView from '../views/validationView';
 
 export const makeTransaction = async () => {
   const amount = DOM.amountInput.value;
@@ -38,27 +39,27 @@ const validateTransactionForm = (amount, transferorAccountId, transfereeAccountI
 
   if (!amount) {
     errors.amount = "Amount cannot be empty";
-    transactionView.invalidInput(DOM.amountInput);
+    validationView.invalidInput(DOM.amountInput);
   } else if (isNaN(amount)) {
     errors.amount = "Amount should be a numberic value";
-    transactionView.invalidInput(DOM.amountInput);
+    validationView.invalidInput(DOM.amountInput);
   } else {
-    transactionView.validInput(DOM.amountInput);
+    validationView.validInput(DOM.amountInput);
   }
 
   if (!transferorAccountId) {
     errors.transferorAccountId =  "Transferor account cannot be empty";
-    transactionView.invalidInput(DOM.transferorAccountInput);
+    validationView.invalidInput(DOM.transferorAccountInput);
   } else {
-    transactionView.validInput(DOM.transferorAccountInput);
+    validationView.validInput(DOM.transferorAccountInput);
 
   }
 
   if (!transfereeAccountId) {
     errors.transfereeAccountId = "Transferee account cannot be empty";
-    transactionView.invalidInput(DOM.transfereeAccountInput);
+    validationView.invalidInput(DOM.transfereeAccountInput);
   } else {
-    transactionView.validInput(DOM.transfereeAccountInput);
+    validationView.validInput(DOM.transfereeAccountInput);
   }
 
   if (Object.keys(errors).length > 0) {
@@ -68,8 +69,8 @@ const validateTransactionForm = (amount, transferorAccountId, transfereeAccountI
 
   if (transferorAccountId === transfereeAccountId) {
     errors.message = "Transferor and Transferee Accounts cannot be equal";
-    transactionView.invalidInput(DOM.transferorAccountInput);
-    transactionView.invalidInput(DOM.transfereeAccountInput);
+    validationView.invalidInput(DOM.transferorAccountInput);
+    validationView.invalidInput(DOM.transfereeAccountInput);
   }
 
   return true;

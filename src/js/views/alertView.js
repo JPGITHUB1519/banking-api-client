@@ -28,7 +28,7 @@ export const showAlert = (container, body, type='success') => {
   
   container.innerHTML = '';
   container.insertAdjacentHTML('beforeend', alertDOMString);
-}
+};
 
 export const successAlert = (container, body) => {
   showAlert(container, body, 'success');
@@ -36,7 +36,7 @@ export const successAlert = (container, body) => {
 
 export const errorAlert = (container, body) => {
   showAlert(container, body, 'error');
-}
+};
 
 // values can be object or array
 export const generateUnorderedList = (values) => {
