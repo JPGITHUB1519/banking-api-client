@@ -79,18 +79,21 @@
           <input class='customer-details-form__customer-id-input form-input'>
         </div>
 
-        <button class='accounts-details-form__search-button form-button'>Search</button>
+        <button class='customer-details-form__search-button form-button'>Search</button>
       </form>
+
+      <div class='customer-detail__alert alert-container'></div>
     
       <div class='customer-details-container'>
         <div class='customer-details-info'>
-          <p class='customer-details-info__customer-name'><span class='bold'>Customer Name:</span> <span>Jean</span></p>
+          <p class='customer-detail-info__detail'>
+            <span class='bold'>Name:</span>
+            <span class='customer-details-info__customer-name'></span>
+          </p>
         </div>
-  
-        <h2 class='subsection-title'>Customer Accounts</h2>
-  
-        <div class='customer-details__card-container card-container'>
-          <div class='account-card card'>
+        <h2 class='subsection-title'>Accounts</h2>
+        <div class='customer-details__cards-container cards-container'>
+          <!-- <div class='account-card card'>
             <p class='card-detail'>
               <span class='bold'>Account Name: </span>
               <span class='account-card__name'></span>
@@ -107,65 +110,9 @@
               <span class='bold'>Date Opened: </span>
               <span class='account-card__date-opened'></span>
             </p>
-          </div>
-    
-          <div class='account-card card'>
-            <p class='card-detail'>
-              <span class='bold'>Account Name: </span>
-              <span class='account-card__name'></span>
-            </p>
-            <p class='card-detail'>
-              <span class='bold'>Amount: </span>
-              <span class='account-card__balance'></span>
-            </p>
-            <p class='card-detail'>
-              <span class='bold'>Customer Id: </span>
-              <span class='account-card__customer-id'></span>
-            </p>
-            <p class='card-detail'>
-              <span class='bold'>Date Opened: </span>
-              <span class='account-card__date-opened'></span>
-            </p>
-          </div>
-  
-          <div class='card'>
-            <p class='card-detail'>
-              <span class='bold'>Account Name: </span>
-              <span class='account-card__name'></span>
-            </p>
-            <p class='card-detail'>
-              <span class='bold'>Amount: </span>
-              <span class='account-card__balance'></span>
-            </p>
-            <p class='card-detail'>
-              <span class='bold'>Customer Id: </span>
-              <span class='account-card__customer-id'></span>
-            </p>
-            <p class='card-detail'>
-              <span class='bold'>Date Opened: </span>
-              <span class='account-card__date-opened'></span>
-            </p>
-          </div>
-    
-          <div class='card'>
-            <p class='card-detail'>
-              <span class='bold'>Account Name: </span>
-              <span class='account-card__name'></span>
-            </p>
-            <p class='card-detail'>
-              <span class='bold'>Amount: </span>
-              <span class='account-card__balance'></span>
-            </p>
-            <p class='card-detail'>
-              <span class='bold'>Customer Id: </span>
-              <span class='account-card__customer-id'></span>
-            </p>
-            <p class='card-detail'>
-              <span class='bold'>Date Opened: </span>
-              <span class='account-card__date-opened'></span>
-            </p>
-          </div>
+          </div> -->
         </div>
+        <p class='section-message customer-detail__no-accounts-message hidden'>This customer does not have any accounts.</p>
       </div>
     </div>
   </div>

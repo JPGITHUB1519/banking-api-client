@@ -25,6 +25,16 @@ export const DOM = {
     accountId: document.querySelector('.accounts-details-form__account-id-input'),
     searchButton: document.querySelector('.accounts-details-form__search-button')
   },
+  // customers
+  customerDetailsSection: document.querySelector('.customer-details-section'),
+  customerDetailsAlertContainer: document.querySelector('.customer-detail__alert'),
+  customerDetailsName: document.querySelector('.customer-details-info__customer-name'),
+  customerDetailsCardsContainer: document.querySelector('.customer-details__cards-container'),
+  customerDetailsNoAccountsMessage: document.querySelector('.customer-detail__no-accounts-message'),
+  customerDetailsForm: {
+    customerId: document.querySelector('.customer-details-form__customer-id-input'),
+    searchButton: document.querySelector('.customer-details-form__search-button')
+  },
   // Alerts
   alerts: {
     container: '.alert-container',
