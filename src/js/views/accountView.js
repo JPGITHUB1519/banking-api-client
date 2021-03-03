@@ -1,9 +1,11 @@
 import { DOM } from './base';
+import currency from 'currency.js';
+
 
 export const displayAccountCard = (accountData) => {
   DOM.accountCard.container.classList.remove('hidden');
   DOM.accountCard.name.textContent = accountData.name;
-  DOM.accountCard.balance.textContent = accountData.balance;
+  DOM.accountCard.balance.textContent = currency(accountData.balance).format();
   DOM.accountCard.customerId.textContent = accountData.customer_id;
   DOM.accountCard.dateOpened.textContent = accountData.date_opened;  
 };

@@ -3,9 +3,10 @@ import Transaction from '../models/Transaction';
 import  * as transactionView from '../views/transactionView';
 import * as alertView from '../views/alertView';
 import * as validationView from '../views/validationView';
+import currency from 'currency.js';
 
 export const makeTransaction = async () => {
-  const amount = DOM.amountInput.value;
+  let amount = DOM.amountInput.value;
   const transferorAccountId = DOM.transferorAccountInput.value;
   const transfereeAccountId = DOM.transfereeAccountInput.value;
   
@@ -13,6 +14,9 @@ export const makeTransaction = async () => {
 
 
   if (transactionFormValidation) {
+    // using currency.js library to handle the amount
+    amount = currency(DOM.amountInput.value).value;
+    
     const transactionModel = new Transaction(amount, transferorAccountId, transfereeAccountId);
     const transactionResult = await transactionModel.transfer();
 
@@ -39,9 +43,6 @@ const validateTransactionForm = (amount, transferorAccountId, transfereeAccountI
 
   if (!amount) {
     errors.amount = "Amount cannot be empty";
-    validationView.invalidInput(DOM.amountInput);
-  } else if (isNaN(amount)) {
-    errors.amount = "Amount should be a numberic value";
     validationView.invalidInput(DOM.amountInput);
   } else {
     validationView.validInput(DOM.amountInput);

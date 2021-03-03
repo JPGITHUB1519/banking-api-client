@@ -1,4 +1,5 @@
 import { DOM } from './base';
+import currency from 'currency.js';
 
 export const renderCustomerDetailsData = (customerData) => {
   DOM.customerDetailsName.textContent = customerData.name;
@@ -14,7 +15,7 @@ export const renderCustomerAccountsDetails = (accountsData) => {
         </p>
         <p class='card-detail'>
           <span class='bold'>Amount: </span>
-          <span class='account-card__balance'>${accountData.balance}</span>
+          <span class='account-card__balance'>${currency(accountData.balance).format()}</span>
         </p>
         <p class='card-detail'>
           <span class='bold'>Customer Id: </span>
