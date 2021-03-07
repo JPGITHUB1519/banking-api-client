@@ -151,6 +151,11 @@ body {
   font-size: 18px;
 }
 
+/* customer crud */
+.customer-crud-form__search-button {
+  background-image: url('./assets/img/loupe.png');
+}
+
 
 
 /* 
