@@ -1,4 +1,5 @@
 import { DOM } from './base';
+import * as tableview from './tableView';
 import currency from 'currency.js';
 
 export const renderCustomerDetailsData = (customerData) => {
@@ -30,6 +31,29 @@ export const renderCustomerAccountsDetails = (accountsData) => {
 
     DOM.customerDetailsCardsContainer.insertAdjacentHTML('beforeend', accountCardDOMString);
   });
+};
+
+export const renderCustomerDataTable = (customersData) => {
+  showDatatableContainer();
+  clearCustomerDataTable();
+  
+  let tableHeaders = [
+    'id',
+    'name',
+    'actions'
+  ];
+
+  const datatableDOMString = tableview.getDatatableDomString(customersData, tableHeaders);
+
+  DOM.customerCrud.datatable.insertAdjacentHTML('beforeend', datatableDOMString);
+};
+
+export const clearCustomerDataTable = () => {
+  DOM.customerCrud.datatable.innerHTML = ``;
+};
+
+export const showDatatableContainer = () => {
+  DOM.customerCrud.tableContainer.classList.remove('hidden');
 };
 
 export const clearCustomerDetails = () => {

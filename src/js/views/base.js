@@ -38,7 +38,9 @@ export const DOM = {
   // customer crud
   customerCrud: {
     searchInput: document.querySelector('.customer-crud-form__search-input'),
-    searchButton: document.querySelector('.customer-crud-form__search-button')
+    searchButton: document.querySelector('.customer-crud-form__search-button'),
+    tableContainer: document.querySelector('.customer-crud-table-container'),
+    datatable: document.querySelector('.customer-crud-data-table')
   },
   // Alerts
   alerts: {

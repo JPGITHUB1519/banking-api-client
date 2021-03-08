@@ -48,7 +48,11 @@ export const findCustomers = async () => {
   const customerModel = new Customer();
   const searchValue = DOM.customerCrud.searchInput.value;
   
-  const data = await customerModel.seachByName(searchValue);
-  console.log(data);
-  console.log(`Searching Customers: ${searchValue}`);
+  const customersData = await customerModel.seachByName(searchValue);
+
+  if (customersData.data) {
+    customerView.renderCustomerDataTable(customersData.data);
+    console.log(`Searching Customers: ${searchValue}`);
+  }
+  
 };
