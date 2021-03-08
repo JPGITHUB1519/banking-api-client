@@ -117,16 +117,68 @@
     </div>
 
     <div class='customer-crud-section section'>
-      <h2 class='section-title'>Customer CRUD</h2>
+      <h2 class='section-title'>Customers CRUD</h2>
       <form class='customer-crud-form'>
         <div class='form-group'>
           <label>Search:</label>
           <input class='customer-crud-form__search-input form-input'>
-          <button class='customer-crud-form__search-button'>
+          <button class='customer-crud-form__search-button search-button background-image-button'>
             <!-- <img src='img/loupe.png' class='customer-crud-form__'> -->
           </button>
         </div>
       </form>
+      <div class='table-container'>
+        <table class='customer-crud-table data-table'> 
+          <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>   
+              <th>Actions</th>      
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jean</td>
+              <td>Ure&ntilde;a</td>
+              <td>
+                <button class="customer-crud-table__edit-button edit-button background-image-button"></button>
+                <button class="customer-crud-table__delete-button delete-button background-image-button"></button>
+                <button class="customer-crud-table__read-button read-button background-image-button"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td>Carlos</td>
+              <td>Magno</td>
+              <td>
+                <button class="customer-crud-table__edit-button edit-button background-image-button"></button>
+                <button class="customer-crud-table__delete-button delete-button background-image-button"></button>
+                <button class="customer-crud-table__read-button read-button background-image-button"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td>Tester</td>
+              <td>Testing</td>
+              <td>
+                <button class="customer-crud-table__edit-button edit-button background-image-button"></button>
+                <button class="customer-crud-table__delete-button delete-button background-image-button"></button>
+                <button class="customer-crud-table__read-button read-button background-image-button"></button>
+              </td>
+            </tr>
+  
+            <tr>
+              <td>John</td>
+              <td>Cena</td>
+              <td>
+                <button class="customer-crud-table__edit-button edit-button background-image-button"></button>
+                <button class="customer-crud-table__delete-button delete-button background-image-button"></button>
+                <button class="customer-crud-table__read-button read-button background-image-button"></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
   <!-- <script src='./bundle.js'></script> -->

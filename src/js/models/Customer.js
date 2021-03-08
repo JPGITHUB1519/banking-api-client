@@ -10,4 +10,11 @@ export default class Customer {
     return fetch(`${API_URL}\\customers\\${customerId}\\accounts`)
       .then(response => response.json());
   }
+
+  async seachByName(name) {
+    const response = await fetch(`${API_URL}\\customers?name=${name}`);
+    const json = await response.json();
+
+    return json;
+  }
 }

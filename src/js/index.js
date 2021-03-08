@@ -23,6 +23,10 @@ const addEventListeners = () => {
     customerController.findCustomer();
   });
   
+  DOM.customerCrud.searchButton.addEventListener('click', e => {
+    e.preventDefault();
+    customerController.findCustomers();
+  });
 }
 
 const init = () => {

@@ -35,6 +35,11 @@ export const DOM = {
     customerId: document.querySelector('.customer-details-form__customer-id-input'),
     searchButton: document.querySelector('.customer-details-form__search-button')
   },
+  // customer crud
+  customerCrud: {
+    searchInput: document.querySelector('.customer-crud-form__search-input'),
+    searchButton: document.querySelector('.customer-crud-form__search-button')
+  },
   // Alerts
   alerts: {
     container: '.alert-container',
