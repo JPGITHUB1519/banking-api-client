@@ -56,3 +56,20 @@ export const findCustomers = async () => {
   }
   
 };
+
+export const deleteCustomer = async (id) => {
+  const confirmResult = confirm('Are you sure you want to permanently delete this record?');
+  if (confirmResult) {
+    const customerModel = new Customer();
+    const deleteStatusCode = await customerModel.deleteCustomer(id);
+  
+    if (deleteStatusCode === 204) {
+      
+    }
+  
+    if (deleteStatusCode === 404) {
+      console.error('Not Found');
+    } 
+    findCustomers();
+  }
+};

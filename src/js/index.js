@@ -27,6 +27,28 @@ const addEventListeners = () => {
     e.preventDefault();
     customerController.findCustomers();
   });
+
+  // Customer CRUD datatable event delegation
+  DOM.customerCrud.datatable.addEventListener('click', async e => {
+    const targetClassname = e.target.classList[0];
+    const id = e.target.parentNode.parentNode.dataset.id;
+
+    if (targetClassname === 'customer-crud-table__edit-button') {
+      console.log('Edit Button');
+      console.log(id);
+    }
+
+    // remove-button
+    if (targetClassname === 'customer-crud-table__delete-button') {
+      customerController.deleteCustomer(id);
+    }
+
+    // read-button
+    if (targetClassname === 'customer-crud-table__read-button') {
+      console.log('Read Button');
+      console.log(id);
+    }
+  });
 }
 
 const init = () => {
@@ -34,3 +56,4 @@ const init = () => {
 };
 
 init();
+

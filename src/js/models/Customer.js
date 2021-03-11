@@ -1,13 +1,13 @@
 import { API_URL } from '../config';
 
 export default class Customer {
-  findCustomer(customerId) {
-    return fetch(`${API_URL}\\customers\\${customerId}`)
+  findCustomer(id) {
+    return fetch(`${API_URL}\\customers\\${id}`)
       .then(response => response.json());
   }
 
-  findAccountsByCustomer(customerId) {
-    return fetch(`${API_URL}\\customers\\${customerId}\\accounts`)
+  findAccountsByCustomer(id) {
+    return fetch(`${API_URL}\\customers\\${id}\\accounts`)
       .then(response => response.json());
   }
 
@@ -16,5 +16,14 @@ export default class Customer {
     const json = await response.json();
 
     return json;
+  }
+
+  async deleteCustomer(id) {
+    const response = await fetch(`${API_URL}\\customers\\${id}`, {
+      headers: { 'Content-Type': 'application/json', },
+      method: 'DELETE'
+    });
+
+    return response.status;
   }
 }
