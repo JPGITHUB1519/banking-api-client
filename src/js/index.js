@@ -34,8 +34,7 @@ const addEventListeners = () => {
     const id = e.target.parentNode.parentNode.dataset.id;
 
     if (targetClassname === 'customer-crud-table__edit-button') {
-      console.log('Edit Button');
-      console.log(id);
+      customerController.editCustomerModal();
     }
 
     // remove-button
@@ -45,8 +44,23 @@ const addEventListeners = () => {
 
     // read-button
     if (targetClassname === 'customer-crud-table__read-button') {
-      console.log('Read Button');
-      console.log(id);
+      customerController.viewCustomerModal();
+    }
+  });
+
+  // modal close buttons events
+  DOM.modals.closeButtons.forEach(modalCloseButton => {
+    modalCloseButton.addEventListener('click', e => {
+      // get the closest modal and close it!
+      modalCloseButton.closest('.modal').classList.add('hidden');
+    });
+  });
+
+  // modal close when clicking outside
+  // using event delegation technique
+  document.addEventListener('click', e => {
+    if (e.target.classList.contains('modal')) {
+      e.target.classList.add('hidden');
     }
   });
 }

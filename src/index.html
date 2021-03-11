@@ -129,10 +129,7 @@
       </form>
       <div class='customer-crud-table-container table-container hidden'>
         <table class='customer-crud-data-table data-table'>
-          
-        </table>
-        <!-- <table class='customer-crud-data-table data-table'> 
-          <thead>
+          <!-- <thead>
             <tr>
               <th>Firstname</th>
               <th>Lastname</th>   
@@ -159,31 +156,56 @@
                 <button class="customer-crud-table__read-button read-button background-image-button"></button>
               </td>
             </tr>
-  
-            <tr>
-              <td>Tester</td>
-              <td>Testing</td>
-              <td>
-                <button class="customer-crud-table__edit-button edit-button background-image-button"></button>
-                <button class="customer-crud-table__delete-button delete-button background-image-button"></button>
-                <button class="customer-crud-table__read-button read-button background-image-button"></button>
-              </td>
-            </tr>
-  
-            <tr>
-              <td>John</td>
-              <td>Cena</td>
-              <td>
-                <button class="customer-crud-table__edit-button edit-button background-image-button"></button>
-                <button class="customer-crud-table__delete-button delete-button background-image-button"></button>
-                <button class="customer-crud-table__read-button read-button background-image-button"></button>
-              </td>
-            </tr>
-          </tbody>
-        </table> -->
+          </tbody> -->
+        </table>
       </div>
     </div>
   </div>
+
+  <!-- modals -->
+  <div class='modal edit-customer-modal'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <span class='modal-close-button'>&times;</span>
+        <h2>Edit Customer</h2>
+      </div>
+      <div class='modal-body'>
+        <form class='edit-customer-form-modal form'>
+          <div class='form-group'>
+            <label>ID</label>
+            <input class='edit-customer-form-modal__id form-input'>
+          </div>
+
+          <div class='form-group'>
+            <label>Name</label>
+            <input class='edit-customer-form-modal__name form-input'>
+          </div>
+          
+          <div class='form-group'>
+            <button class='form-button'>Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class='modal view-customer-modal hidden'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <span class='modal-close-button'>&times;</span>
+        <h2>Modal Header</h2>
+      </div>
+      <div class='modal-body'>
+        <p>Some text in the modal</p>
+        <p>Some other text</p>
+      </div>
+      <div class='modal-footer'>
+        <h3>Modal Footer</h3>
+      </div>
+    </div>
+  </div>
+
+
   <!-- <script src='./bundle.js'></script> -->
 </body>
 </html>

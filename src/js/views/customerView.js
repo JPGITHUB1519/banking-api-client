@@ -48,6 +48,14 @@ export const renderCustomerDataTable = (customersData) => {
   DOM.customerCrud.datatable.insertAdjacentHTML('beforeend', datatableDOMString);
 };
 
+export const showViewCustomerModal = () => {
+  DOM.modals.viewCustomerModal.classList.remove('hidden'); 
+};
+
+export const showEditCustomerModal = () => {
+  DOM.modals.editCustomerModal.classList.remove('hidden');
+};
+
 export const clearCustomerDataTable = () => {
   DOM.customerCrud.datatable.innerHTML = ``;
 };

@@ -46,6 +46,12 @@ export const DOM = {
   alerts: {
     container: '.alert-container',
     body: 'alert-body'
+  },
+  modals: {
+    modals: document.querySelectorAll('.modal'),
+    closeButtons: document.querySelectorAll('.modal-close-button'),
+    viewCustomerModal: document.querySelector('.view-customer-modal'),
+    editCustomerModal: document.querySelector('.edit-customer-modal')
   }
 };
 

@@ -73,3 +73,11 @@ export const deleteCustomer = async (id) => {
     findCustomers();
   }
 };
+
+export const viewCustomerModal = () => {
+  customerView.showViewCustomerModal();
+};
+
+export const editCustomerModal = () => {
+  customerView.showEditCustomerModal();
+};
