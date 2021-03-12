@@ -1,5 +1,6 @@
 import { DOM } from './base';
 import * as tableview from './tableView';
+import * as validationView from './validationView';
 import currency from 'currency.js';
 
 export const renderCustomerDetailsData = (customerData) => {
@@ -52,8 +53,18 @@ export const showViewCustomerModal = () => {
   DOM.modals.viewCustomerModal.classList.remove('hidden'); 
 };
 
-export const showEditCustomerModal = () => {
+export const showEditCustomerModal = (customerData) => {
+  // filling modal form
+  DOM.editCustomerFormModal.id.value = customerData.id;
+  DOM.editCustomerFormModal.name.value = customerData.name;
+
+  // clearing modal from previous changes
+  DOM.editCustomerFormModal.alertContainer.innerHTML = '';
+  validationView.clearFormErrors(DOM.editCustomerFormModal.form);
+
+  // showing it
   DOM.modals.editCustomerModal.classList.remove('hidden');
+  DOM.editCustomerFormModal.name.focus();
 };
 
 export const clearCustomerDataTable = () => {

@@ -69,16 +69,18 @@ const validateTransactionForm = (amount, transferorAccountId, transfereeAccountI
     validationView.validInput(DOM.transfereeAccountInput);
   }
 
-  if (Object.keys(errors).length > 0) {
-    alertView.errorAlert(DOM.transactionAlertContainer, alertView.generateUnorderedList(errors));
-    return false;
-  }
-
+  
   if (transferorAccountId === transfereeAccountId) {
     errors.message = "Transferor and Transferee Accounts cannot be equal";
     validationView.invalidInput(DOM.transferorAccountInput);
     validationView.invalidInput(DOM.transfereeAccountInput);
   }
+
+  if (Object.keys(errors).length > 0) {
+    alertView.errorAlert(DOM.transactionAlertContainer, alertView.generateUnorderedList(errors));
+    return false;
+  }
+
 
   return true;
 }

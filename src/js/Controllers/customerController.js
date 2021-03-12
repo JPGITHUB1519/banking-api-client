@@ -74,10 +74,48 @@ export const deleteCustomer = async (id) => {
   }
 };
 
+export const updateCustomerFromModal = async () => {
+  const customerModel = new Customer();
+  const id = DOM.editCustomerFormModal.id.value;
+  const name = DOM.editCustomerFormModal.name.value;
+
+  const validationErrors = validateCustomer(name);
+
+  if (Object.keys(validationErrors).length > 0) {
+    alertView.errorAlert(DOM.editCustomerFormModal.alertContainer, alertView.generateUnorderedList(validationErrors));
+    return;
+  };
+
+  const response = await customerModel.update(id, name);
+
+  if (!response.error) {
+    alertView.successAlert(DOM.editCustomerFormModal.alertContainer, 'Customer Updated');
+    findCustomers();
+  } else {
+    alertView.errorAlert(DOM.editCustomerFormModal.alertContainer, response.error)
+  }
+};
+
 export const viewCustomerModal = () => {
   customerView.showViewCustomerModal();
 };
 
-export const editCustomerModal = () => {
-  customerView.showEditCustomerModal();
+export const editCustomerModal = async (id) => {
+  const customerModel = new Customer();
+  const customerData = await customerModel.findCustomer(id);
+  customerView.showEditCustomerModal(customerData);
 };
+
+// returns an object containing the validation errors for each field
+export const validateCustomer = (name) => {
+  const errors = {};
+  
+  if (!name) {
+    errors.name = 'Name cannot be empty';
+    validationView.invalidInput(DOM.editCustomerFormModal.name);
+  } else {
+    validationView.validInput(DOM.editCustomerFormModal.name);
+  }
+  
+  return errors;
+}

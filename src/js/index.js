@@ -27,6 +27,7 @@ const addEventListeners = () => {
     e.preventDefault();
     customerController.findCustomers();
   });
+  
 
   // Customer CRUD datatable event delegation
   DOM.customerCrud.datatable.addEventListener('click', async e => {
@@ -34,7 +35,7 @@ const addEventListeners = () => {
     const id = e.target.parentNode.parentNode.dataset.id;
 
     if (targetClassname === 'customer-crud-table__edit-button') {
-      customerController.editCustomerModal();
+      customerController.editCustomerModal(id);
     }
 
     // remove-button
@@ -47,6 +48,11 @@ const addEventListeners = () => {
       customerController.viewCustomerModal();
     }
   });
+
+  DOM.editCustomerFormModal.saveButton.addEventListener('click', e => {
+    e.preventDefault();
+    customerController.updateCustomerFromModal();
+  })
 
   // modal close buttons events
   DOM.modals.closeButtons.forEach(modalCloseButton => {

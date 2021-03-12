@@ -52,6 +52,13 @@ export const DOM = {
     closeButtons: document.querySelectorAll('.modal-close-button'),
     viewCustomerModal: document.querySelector('.view-customer-modal'),
     editCustomerModal: document.querySelector('.edit-customer-modal')
+  },
+  editCustomerFormModal: {
+    form: document.querySelector('.edit-customer-form-modal'),
+    id: document.querySelector('.edit-customer-form-modal__id'),
+    name: document.querySelector('.edit-customer-form-modal__name'),
+    saveButton: document.querySelector('.edit-customer-form-modal__save-button'),
+    alertContainer: document.querySelector('.edit-customer-form-modal__alert-container')
   }
 };
 

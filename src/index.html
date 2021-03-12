@@ -163,7 +163,7 @@
   </div>
 
   <!-- modals -->
-  <div class='modal edit-customer-modal'>
+  <div class='modal edit-customer-modal hidden'>
     <div class='modal-content'>
       <div class='modal-header'>
         <span class='modal-close-button'>&times;</span>
@@ -173,7 +173,7 @@
         <form class='edit-customer-form-modal form'>
           <div class='form-group'>
             <label>ID</label>
-            <input class='edit-customer-form-modal__id form-input'>
+            <input class='edit-customer-form-modal__id form-input' disabled>
           </div>
 
           <div class='form-group'>
@@ -182,7 +182,11 @@
           </div>
           
           <div class='form-group'>
-            <button class='form-button'>Save</button>
+            <button class='form-button edit-customer-form-modal__save-button'>Save</button>
+          </div>
+
+          <div class='edit-customer-form-modal__alert-container alert-container'>
+
           </div>
         </form>
       </div>

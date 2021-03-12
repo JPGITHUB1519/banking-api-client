@@ -11,6 +11,17 @@ export default class Customer {
       .then(response => response.json());
   }
 
+  async update(id, name) {
+    const response = await fetch(`${API_URL}\\customers\\${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({
+        name: name
+      })
+    });
+
+    return response.json();
+  }
+
   async seachByName(name) {
     const response = await fetch(`${API_URL}\\customers?name=${name}`);
     const json = await response.json();
