@@ -3,11 +3,9 @@ import * as tableview from './tableView';
 import * as validationView from './validationView';
 import currency from 'currency.js';
 
-export const renderCustomerDetailsData = (customerData) => {
-  DOM.customerDetailsName.textContent = customerData.name;
-};
+const getAccountsCardsDOMString = (accountsData) => {
+  let accountsCardsDOMString = '';
 
-export const renderCustomerAccountsDetails = (accountsData) => {
   accountsData.forEach(accountData => {
     let accountCardDOMString = `
       <div class='account-card card'>
@@ -16,7 +14,7 @@ export const renderCustomerAccountsDetails = (accountsData) => {
           <span class='account-card__name'>${accountData.name}</span>
         </p>
         <p class='card-detail'>
-          <span class='bold'>Amount: </span>
+          <span class='bold'>Balance: </span>
           <span class='account-card__balance'>${currency(accountData.balance).format()}</span>
         </p>
         <p class='card-detail'>
@@ -27,11 +25,21 @@ export const renderCustomerAccountsDetails = (accountsData) => {
           <span class='bold'>Date Opened: </span>
           <span class='account-card__date-opened'>${accountData.date_opened}</span>
         </p>
-      </div>
-    `;
-
-    DOM.customerDetailsCardsContainer.insertAdjacentHTML('beforeend', accountCardDOMString);
+      </div>`
+    ;
+    accountsCardsDOMString = accountsCardsDOMString.concat(accountCardDOMString);
   });
+  
+  return accountsCardsDOMString;
+};
+
+export const renderCustomerDetailsData = (customerData) => {
+  DOM.customerDetailsName.textContent = customerData.name;
+};
+
+export const renderCustomerAccountsDetails = (accountsData) => {
+  const accountsCardsDOMString = getAccountsCardsDOMString(accountsData);
+  DOM.customerDetailsCardsContainer.insertAdjacentHTML('beforeend', accountsCardsDOMString);
 };
 
 export const renderCustomerDataTable = (customersData) => {
@@ -49,7 +57,21 @@ export const renderCustomerDataTable = (customersData) => {
   DOM.customerCrud.datatable.insertAdjacentHTML('beforeend', datatableDOMString);
 };
 
-export const showViewCustomerModal = () => {
+export const showViewCustomerModal = (customerData, customerAccountsData) => {
+  let accountsCardsDOMString ;
+
+  DOM.viewCustomerModal.customerName.textContent = customerData.name;
+
+  DOM.viewCustomerModal.accountsContainer.innerHTML = '';
+
+  if (customerAccountsData.length > 0) {
+    accountsCardsDOMString = getAccountsCardsDOMString(customerAccountsData);
+  } else {
+    // if the customer does not have any accounts
+    accountsCardsDOMString = `<p>This Customer does not have any accounts`;
+  }
+
+  DOM.viewCustomerModal.accountsContainer.insertAdjacentHTML('beforeend', accountsCardsDOMString);
   DOM.modals.viewCustomerModal.classList.remove('hidden'); 
 };
 

@@ -20,7 +20,7 @@ export const DOM = {
     balance: document.querySelector('.account-card__balance'),
     customerId: document.querySelector('.account-card__customer-id'),
     dateOpened: document.querySelector('.account-card__date-opened')
-  } ,
+  },
   accountDetailsForm: {
     accountId: document.querySelector('.accounts-details-form__account-id-input'),
     searchButton: document.querySelector('.accounts-details-form__search-button')
@@ -55,6 +55,11 @@ export const DOM = {
     name: document.querySelector('.edit-customer-form-modal__name'),
     saveButton: document.querySelector('.edit-customer-form-modal__save-button'),
     alertContainer: document.querySelector('.edit-customer-form-modal__alert-container')
+  },
+  viewCustomerModal: {
+    customerName: document.querySelector('.view-customer-modal__customer-name'),
+    accountsContainer: document.querySelector('.view-customer-modal__accounts-container'),
+
   },
   // Alerts
   alerts: {

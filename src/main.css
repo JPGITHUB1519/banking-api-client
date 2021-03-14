@@ -331,6 +331,12 @@ th, td {
   cursor: pointer;
 }
 
+.modal-section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 25px;
+}
+
 
 .modal .form {
   margin: 0 auto;

@@ -97,7 +97,7 @@ export const deleteCustomer = async (id) => {
   }
 };
 
-export const updateCustomerFromModal = async () => {
+export const updateCustomer = async () => {
   const customerModel = new Customer();
   const id = DOM.editCustomerFormModal.id.value;
   const name = DOM.editCustomerFormModal.name.value;
@@ -119,12 +119,15 @@ export const updateCustomerFromModal = async () => {
   }
 };
 
-export const addCustomerModal = () => {
-  customerView.showAddCustomerModal();
+export const viewCustomer = async (id) => {
+  const customerModel = new Customer();
+  const customerData = await customerModel.findCustomer(id);
+  const customerAccountsData = await customerModel.findAccountsByCustomer(customerData.id);
+  customerView.showViewCustomerModal(customerData, customerAccountsData.data);
 };
 
-export const viewCustomerModal = () => {
-  customerView.showViewCustomerModal();
+export const addCustomerModal = () => {
+  customerView.showAddCustomerModal();
 };
 
 export const editCustomerModal = async (id) => {

@@ -52,13 +52,13 @@ const addEventListeners = () => {
 
     // read-button
     if (targetClassname === 'customer-crud-table__read-button') {
-      customerController.viewCustomerModal();
+      customerController.viewCustomer(id);
     }
   });
 
   DOM.editCustomerFormModal.saveButton.addEventListener('click', e => {
     e.preventDefault();
-    customerController.updateCustomerFromModal();
+    customerController.updateCustomer();
   });
 
   DOM.addCustomerFormModal.saveButton.addEventListener('click', e => {
