@@ -37,10 +37,24 @@ export const DOM = {
   },
   // customer crud
   customerCrud: {
-    searchInput: document.querySelector('.customer-crud-form__search-input'),
-    searchButton: document.querySelector('.customer-crud-form__search-button'),
+    addButton: document.querySelector('.customer-crud-search-form__add-button'),
+    searchInput: document.querySelector('.customer-crud-search-form__search-input'),
+    searchButton: document.querySelector('.customer-crud-search-form__search-button'),
     tableContainer: document.querySelector('.customer-crud-table-container'),
     datatable: document.querySelector('.customer-crud-data-table')
+  },
+  addCustomerFormModal: {
+    form: document.querySelector('.add-customer-form-modal'),
+    name: document.querySelector('.add-customer-form-modal__name'),
+    saveButton: document.querySelector('.add-customer-form-modal__save-button'),
+    alertContainer: document.querySelector('.add-customer-form-modal__alert-container')
+  },
+  editCustomerFormModal: {
+    form: document.querySelector('.edit-customer-form-modal'),
+    id: document.querySelector('.edit-customer-form-modal__id'),
+    name: document.querySelector('.edit-customer-form-modal__name'),
+    saveButton: document.querySelector('.edit-customer-form-modal__save-button'),
+    alertContainer: document.querySelector('.edit-customer-form-modal__alert-container')
   },
   // Alerts
   alerts: {
@@ -50,15 +64,9 @@ export const DOM = {
   modals: {
     modals: document.querySelectorAll('.modal'),
     closeButtons: document.querySelectorAll('.modal-close-button'),
+    addCustomerModal: document.querySelector('.add-customer-modal'),
     viewCustomerModal: document.querySelector('.view-customer-modal'),
     editCustomerModal: document.querySelector('.edit-customer-modal')
   },
-  editCustomerFormModal: {
-    form: document.querySelector('.edit-customer-form-modal'),
-    id: document.querySelector('.edit-customer-form-modal__id'),
-    name: document.querySelector('.edit-customer-form-modal__name'),
-    saveButton: document.querySelector('.edit-customer-form-modal__save-button'),
-    alertContainer: document.querySelector('.edit-customer-form-modal__alert-container')
-  }
 };
 

@@ -53,6 +53,13 @@ export const showViewCustomerModal = () => {
   DOM.modals.viewCustomerModal.classList.remove('hidden'); 
 };
 
+export const showAddCustomerModal = () => {
+  DOM.modals.addCustomerModal.classList.remove('hidden');
+  clearAddCustomerModalForm();
+  DOM.addCustomerFormModal.alertContainer.innerHTML = '';
+  DOM.addCustomerFormModal.name.focus();
+};
+
 export const showEditCustomerModal = (customerData) => {
   // filling modal form
   DOM.editCustomerFormModal.id.value = customerData.id;
@@ -65,6 +72,10 @@ export const showEditCustomerModal = (customerData) => {
   // showing it
   DOM.modals.editCustomerModal.classList.remove('hidden');
   DOM.editCustomerFormModal.name.focus();
+};
+
+export const clearAddCustomerModalForm = () => {
+  DOM.addCustomerFormModal.name.value = '';
 };
 
 export const clearCustomerDataTable = () => {
@@ -90,5 +101,4 @@ export const showNoAccountsMessage = () => {
 
 export const hideNoAccountsMessage = () => {
   DOM.customerDetailsNoAccountsMessage.classList.add('hidden');
-
 }

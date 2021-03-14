@@ -28,7 +28,7 @@
           <input class='transaction-form__transferee-account-input form-input'>
         </div>
         
-        <button class='transaction-form__transfer-button form-button'>Transfer</button>   
+        <button class='transaction-form__transfer-button button button--red button--size-medium button--spacing-small'>Transfer</button>   
       </form>
 
       <div class='transaction__alert alert-container'>
@@ -44,7 +44,7 @@
           <input class='accounts-details-form__account-id-input form-input'>
         </div>
 
-        <button class='accounts-details-form__search-button form-button'>Search</button>
+        <button class='accounts-details-form__search-button button button--red button--size-medium button--spacing-small'>Search</button>
       </form>
             
       <div class='account-details__alert alert-container'>
@@ -79,7 +79,7 @@
           <input class='customer-details-form__customer-id-input form-input'>
         </div>
 
-        <button class='customer-details-form__search-button form-button'>Search</button>
+        <button class='customer-details-form__search-button button button--red button--size-medium button--spacing-small'>Search</button>
       </form>
 
       <div class='customer-detail__alert alert-container'></div>
@@ -118,11 +118,12 @@
 
     <div class='customer-crud-section section'>
       <h2 class='section-title'>Customers CRUD</h2>
-      <form class='customer-crud-form'>
+      <form class='customer-crud-search-form form form--big'>
         <div class='form-group'>
+          <button class='customer-crud-search-form__add-button button button--red button--size-medium'>Add Record</button>
           <label>Search:</label>
-          <input class='customer-crud-form__search-input form-input'>
-          <button class='customer-crud-form__search-button search-button background-image-button'>
+          <input class='customer-crud-search-form__search-input form-input'>
+          <button class='customer-crud-search-form__search-button search-button background-image-button'>
             <!-- <img src='img/loupe.png' class='customer-crud-form__'> -->
           </button>
         </div>
@@ -163,6 +164,35 @@
   </div>
 
   <!-- modals -->
+
+  <!-- Add Customer Modal -->
+  <div class='modal add-customer-modal hidden'>
+    <div class="modal-content">
+      <div class='modal-header'>
+        <span class='modal-close-button'>&times;</span>
+        <h2>Add Customer</h2>
+      </div>
+  
+      <div class='modal-body'>
+        <form class='add-customer-form-modal form'>
+          <div class='form-group'>
+            <label>Name</label>
+            <input class='add-customer-form-modal__name form-input'>
+          </div>
+
+          <div class='form-group'>
+            <button class='add-customer-form-modal__save-button button button--red button--size-medium button--spacing-small'>Save</button>
+          </div>
+
+          <div class="add-customer-form-modal__alert-container alert-container">
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Customer modal -->
   <div class='modal edit-customer-modal hidden'>
     <div class='modal-content'>
       <div class='modal-header'>
@@ -182,7 +212,7 @@
           </div>
           
           <div class='form-group'>
-            <button class='form-button edit-customer-form-modal__save-button'>Save</button>
+            <button class='edit-customer-form-modal__save-button button button--red button--size-medium button--spacing-small'>Save</button>
           </div>
 
           <div class='edit-customer-form-modal__alert-container alert-container'>
@@ -193,6 +223,7 @@
     </div>
   </div>
 
+  <!-- View Customer Modal -->
   <div class='modal view-customer-modal hidden'>
     <div class='modal-content'>
       <div class='modal-header'>

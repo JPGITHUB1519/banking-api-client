@@ -8,11 +8,13 @@ import currency from 'currency.js';
 
 // validate transaction form, return true if correct
 const addEventListeners = () => {
+  // Transaction
   DOM.transferButton.addEventListener('click', e => {
     e.preventDefault();
     transactionController.makeTransaction();
   });
 
+  // Account Details
   DOM.accountDetailsForm.searchButton.addEventListener('click', e => {
     e.preventDefault();
     accountController.findAccount();
@@ -22,12 +24,17 @@ const addEventListeners = () => {
     e.preventDefault();
     customerController.findCustomer();
   });
-  
+
+  // Customer CRUD
   DOM.customerCrud.searchButton.addEventListener('click', e => {
     e.preventDefault();
     customerController.findCustomers();
   });
   
+  DOM.customerCrud.addButton.addEventListener('click', e => {
+    e.preventDefault();
+    customerController.addCustomerModal();
+  });
 
   // Customer CRUD datatable event delegation
   DOM.customerCrud.datatable.addEventListener('click', async e => {
@@ -52,7 +59,12 @@ const addEventListeners = () => {
   DOM.editCustomerFormModal.saveButton.addEventListener('click', e => {
     e.preventDefault();
     customerController.updateCustomerFromModal();
-  })
+  });
+
+  DOM.addCustomerFormModal.saveButton.addEventListener('click', e => {
+    e.preventDefault();
+    customerController.addCustomer();
+  });
 
   // modal close buttons events
   DOM.modals.closeButtons.forEach(modalCloseButton => {

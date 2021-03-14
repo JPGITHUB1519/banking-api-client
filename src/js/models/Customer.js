@@ -10,6 +10,16 @@ export default class Customer {
     return fetch(`${API_URL}\\customers\\${id}\\accounts`)
       .then(response => response.json());
   }
+  
+  async add(name) {
+    const response = await fetch(`${API_URL}\\customers`, {
+      method: 'post',
+      body: JSON.stringify({
+        name: name
+      }) 
+    });
+    return response.json();
+  }
 
   async update(id, name) {
     const response = await fetch(`${API_URL}\\customers\\${id}`, {

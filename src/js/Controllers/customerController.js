@@ -57,6 +57,29 @@ export const findCustomers = async () => {
   
 };
 
+export const addCustomer = async () => {
+  const customerModel = new Customer();
+  const name = DOM.addCustomerFormModal.name.value;
+  const validationErrors = validateCustomer(name);
+
+  if (Object.keys(validationErrors).length > 0) {
+    alertView.errorAlert(DOM.addCustomerFormModal.alertContainer, alertView.generateUnorderedList(validationErrors));
+    return;
+  }
+
+  const response = await customerModel.add(name);
+
+  if (!response.error) {
+    alertView.successAlert(DOM.addCustomerFormModal.alertContainer, "Customer Added Successfully");
+    customerView.clearAddCustomerModalForm();
+    DOM.addCustomerFormModal.name.focus();
+    findCustomers();
+  } else {
+    alertView.errorAlert(DOM.addCustomerFormModal.alertContainer, response.error);
+    DOM.addCustomerFormModal.name.focus();
+  }
+};
+
 export const deleteCustomer = async (id) => {
   const confirmResult = confirm('Are you sure you want to permanently delete this record?');
   if (confirmResult) {
@@ -96,6 +119,10 @@ export const updateCustomerFromModal = async () => {
   }
 };
 
+export const addCustomerModal = () => {
+  customerView.showAddCustomerModal();
+};
+
 export const viewCustomerModal = () => {
   customerView.showViewCustomerModal();
 };
@@ -112,9 +139,9 @@ export const validateCustomer = (name) => {
   
   if (!name) {
     errors.name = 'Name cannot be empty';
-    validationView.invalidInput(DOM.editCustomerFormModal.name);
+    //validationView.invalidInput(DOM.editCustomerFormModal.name);
   } else {
-    validationView.validInput(DOM.editCustomerFormModal.name);
+    //validationView.validInput(DOM.editCustomerFormModal.name);
   }
   
   return errors;

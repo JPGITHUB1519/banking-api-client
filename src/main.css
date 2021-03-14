@@ -64,7 +64,8 @@ body {
   width: 50%;
 }
 
-.form-button {
+
+/* .form-button {
   border: none;
   background-color: #e74c3c;
   cursor: pointer;
@@ -73,7 +74,7 @@ body {
   outline: none;
   margin: 35px auto 0 auto;
   width: 100px;
-}
+} */
 
 .form-label {
   /* font-weight: 700; */
@@ -156,14 +157,6 @@ body {
 .customer-detail-info__detail {
   font-size: 18px;
 }
-
-/* customer crud */
-.customer-crud-form__search-button {
-  /* background-image: url('./assets/img/loupe.png'); */
-}
-
-
-
 /* 
 ==========================================================================
 Common
@@ -230,6 +223,29 @@ th, td {
   background-color: #e74c3c;
   color: #fff;
 }
+
+
+.button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.button--red {
+  background-color: #e74c3c;
+  color: #FFFFFF;
+}
+
+.button--size-medium {
+  height: 50px;
+  width: 100px;
+}
+
+.button--spacing-small {
+  margin: 35px auto 0 auto;
+}
+
+
 
 /* modal start */
 .modal {
@@ -327,6 +343,7 @@ Utility
 ========================================================================== 
 */
 
+
 .not-bullet-point {
   list-style-type: none;
 }
@@ -362,6 +379,10 @@ Responsive Media Queries
 
   .form {
     width: 50%;
+  }
+
+  .form--big {
+    width: 80%;
   }
 
   .modal {
