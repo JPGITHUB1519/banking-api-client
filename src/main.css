@@ -205,10 +205,10 @@ th, td {
 }
 
 .table-container {
-  margin-top: 25px;
+  /* margin-top: 25px; */
   display: flex;
   width: 100%;
-  padding: 0px 20px;
+  padding: 25px 20px;
 }
 
 .data-table {

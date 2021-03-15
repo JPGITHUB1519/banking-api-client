@@ -37,6 +37,7 @@ export const DOM = {
   },
   // customer crud
   customerCrud: {
+    section: document.querySelector('.customer-crud-section'),
     addButton: document.querySelector('.customer-crud-search-form__add-button'),
     searchInput: document.querySelector('.customer-crud-search-form__search-input'),
     searchButton: document.querySelector('.customer-crud-search-form__search-button'),

@@ -36,6 +36,15 @@ const addEventListeners = () => {
     customerController.addCustomerModal();
   });
 
+  DOM.customerCrud.searchInput.addEventListener('keydown', e => {
+    // listen for enter and key on customer crud search form
+    if (e.key === 'Enter') {
+      // prevent submitting the form
+      e.preventDefault();
+      customerController.findCustomers();
+    }
+  });
+
   // Customer CRUD datatable event delegation
   DOM.customerCrud.datatable.addEventListener('click', async e => {
     const targetClassname = e.target.classList[0];
