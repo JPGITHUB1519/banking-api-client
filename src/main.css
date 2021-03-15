@@ -211,19 +211,19 @@ th, td {
   padding: 25px 20px;
 }
 
-.data-table {
+.datatable {
   width: 100%;
 }
 
-.data-table tr:nth-child(even) {
+.datatable tr:nth-child(even) {
   background-color: #eee;
 }
 
-.data-table tr:nth-child(odd) {
+.datatable tr:nth-child(odd) {
   background-color: #fff;
 }
 
-.data-table th {
+.datatable th {
   background-color: #e74c3c;
   color: #fff;
 }

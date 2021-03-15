@@ -48,8 +48,7 @@ export const renderCustomerDataTable = (customersData) => {
   
   let tableHeaders = [
     'id',
-    'name',
-    'actions'
+    'name'
   ];
 
   const datatableDOMString = tableview.getDatatableDomString(customersData, tableHeaders);

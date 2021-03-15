@@ -36,6 +36,11 @@ const addEventListeners = () => {
     customerController.addCustomerModal();
   });
 
+  DOM.customerCrud.bulkDeleteButton.addEventListener('click', e => {
+    e.preventDefault();
+    customerController.bulkDelete();
+  });
+
   DOM.customerCrud.searchInput.addEventListener('keydown', e => {
     // listen for enter and key on customer crud search form
     if (e.key === 'Enter') {
@@ -50,17 +55,17 @@ const addEventListeners = () => {
     const targetClassname = e.target.classList[0];
     const id = e.target.parentNode.parentNode.dataset.id;
 
-    if (targetClassname === 'customer-crud-table__edit-button') {
+    if (targetClassname === 'customer-crud-datatable__edit-button') {
       customerController.editCustomerModal(id);
     }
 
     // remove-button
-    if (targetClassname === 'customer-crud-table__delete-button') {
+    if (targetClassname === 'customer-crud-datatable__delete-button') {
       customerController.deleteCustomer(id);
     }
 
     // read-button
-    if (targetClassname === 'customer-crud-table__read-button') {
+    if (targetClassname === 'customer-crud-datatable__read-button') {
       customerController.viewCustomer(id);
     }
   });
@@ -93,6 +98,7 @@ const addEventListeners = () => {
 }
 
 const init = () => {
+  customerController.findCustomers();
   addEventListeners();
 };
 

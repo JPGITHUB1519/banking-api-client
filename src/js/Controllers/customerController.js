@@ -97,6 +97,30 @@ export const deleteCustomer = async (id) => {
   }
 };
 
+export const bulkDelete = async () => {
+  // get checkBoxes
+  const customerModel = new Customer();
+  const checkBoxes = DOM.customerCrud.datatable.querySelectorAll('.customer-crud-datatable__checkbox');
+  const ids = [];
+
+  checkBoxes.forEach(checkBox => {
+    if (checkBox.checked) {
+      ids.push(checkBox.closest('tr').dataset.id);
+    }
+  });
+
+  if (ids.length > 0) {
+    const confirmResult = confirm(`Are you sure you want to permanently delete ${ids.length} records?`);
+
+    if (confirmResult) {
+      const responses = await customerModel.deleteCustomers(ids);
+      findCustomers();
+    }  
+  } else {
+    alert('Please select the records to be deleted');
+  }
+};
+
 export const updateCustomer = async () => {
   const customerModel = new Customer();
   const id = DOM.editCustomerFormModal.id.value;

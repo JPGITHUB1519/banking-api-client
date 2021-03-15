@@ -47,4 +47,22 @@ export default class Customer {
 
     return response.status;
   }
+
+  // delete in bulk
+  async deleteCustomers(ids) {
+    // const responses = await Promise.all(ids.map(async (id) => {
+    //   const response = await this.deleteCustomer(id);
+    //   return response;
+    // }));
+
+    // returns an array of promises
+    let responses = ids.map(async (id) => {
+      const response = await this.deleteCustomer(id);
+      return response;
+    });
+
+    // returns a single Promise that resolves to an array of the results of the promises
+    responses = await Promise.all(responses);
+    return responses;
+  }
 }

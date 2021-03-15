@@ -23,10 +23,13 @@ export const getDataTableHeadersDOMString = (headers) => {
   const tableHeaderDomString = `
     <thead>
       <tr>
+      <th></th>
        ${headers.map(header => {
         return `<th>${header}</th>`;
        }).join('')} 
+       <th>Actions</th>
       </tr>
+      
     </thead>
   `;
 
@@ -46,6 +49,10 @@ export const getDataTableHeadersDOMString = (headers) => {
 const getDatatableRowsDOMString = (data) => {
   const dataTableRowsDOMString = data.map(row => {
     const tdStrings = [];
+
+    // checkboxes
+    tdStrings.push(`<td><input type='checkbox' class='customer-crud-datatable__checkbox'></td>`);
+
     for (const property in row) {
       tdStrings.push(`<td>${row[property]}</td>`)
     }
@@ -53,9 +60,9 @@ const getDatatableRowsDOMString = (data) => {
     // adding action buttons domString
     const actionsButtonsDOMString = `
       <td>
-        <button class="customer-crud-table__edit-button edit-button background-image-button"></button>
-        <button class="customer-crud-table__delete-button delete-button background-image-button"></button>
-        <button class="customer-crud-table__read-button read-button background-image-button"></button>
+        <button class="customer-crud-datatable__edit-button edit-button background-image-button"></button>
+        <button class="customer-crud-datatable__delete-button delete-button background-image-button"></button>
+        <button class="customer-crud-datatable__read-button read-button background-image-button"></button>
       </td>
     `;
 

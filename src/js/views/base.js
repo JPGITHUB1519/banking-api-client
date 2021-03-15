@@ -39,10 +39,11 @@ export const DOM = {
   customerCrud: {
     section: document.querySelector('.customer-crud-section'),
     addButton: document.querySelector('.customer-crud-search-form__add-button'),
+    bulkDeleteButton: document.querySelector('.customer-crud-searh-form__bulk-delete'),
     searchInput: document.querySelector('.customer-crud-search-form__search-input'),
     searchButton: document.querySelector('.customer-crud-search-form__search-button'),
     tableContainer: document.querySelector('.customer-crud-table-container'),
-    datatable: document.querySelector('.customer-crud-data-table')
+    datatable: document.querySelector('.customer-crud-datatable')
   },
   addCustomerFormModal: {
     form: document.querySelector('.add-customer-form-modal'),
@@ -75,4 +76,3 @@ export const DOM = {
     editCustomerModal: document.querySelector('.edit-customer-modal')
   },
 };
-
