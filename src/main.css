@@ -76,18 +76,6 @@ body {
   width: 60%;
 }
 
-
-/* .form-button {
-  border: none;
-  background-color: #e74c3c;
-  cursor: pointer;
-  color: #FFFFFF;
-  height: 50px;
-  outline: none;
-  margin: 35px auto 0 auto;
-  width: 100px;
-} */
-
 .form-label {
   /* font-weight: 700; */
 }
@@ -169,6 +157,8 @@ body {
 .customer-detail-info__detail {
   font-size: 18px;
 }
+
+
 /* 
 ==========================================================================
 Common
@@ -352,11 +342,11 @@ th, td {
   margin-top: 25px;
 }
 
-
 .modal .form {
   margin: 0 auto;
 }
 /* modal end /*
+
 
 /* 
 ==========================================================================
@@ -383,6 +373,7 @@ Utility
 .center-block {
   margin: 0 auto
 }
+
 
 /* 
 ==========================================================================
@@ -449,8 +440,6 @@ Responsive Media Queries
     margin: 0;
   }
 }
-
-
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {

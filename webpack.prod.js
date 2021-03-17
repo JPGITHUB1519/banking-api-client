@@ -34,5 +34,5 @@ module.exports = merge(common, {
       })
     ]
   },
-  plugins: [new MiniCssExtraPlugin({ filename: "css/styles.css"})]
+  plugins: [new MiniCssExtraPlugin({ filename: "css/[name].[contenthash].css"})]
 });

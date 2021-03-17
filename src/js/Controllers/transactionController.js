@@ -80,7 +80,6 @@ const validateTransactionForm = (amount, transferorAccountId, transfereeAccountI
     alertView.errorAlert(DOM.transactionAlertContainer, alertView.generateUnorderedList(errors));
     return false;
   }
-
-
+  
   return true;
 }

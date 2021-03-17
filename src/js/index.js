@@ -6,7 +6,7 @@ import * as customerController from './controllers/customerController';
 import "../main.css";
 import currency from 'currency.js';
 
-// validate transaction form, return true if correct
+// validate transaction form return true if correct
 const addEventListeners = () => {
   // Transaction
   DOM.transferButton.addEventListener('click', e => {
