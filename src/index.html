@@ -119,11 +119,14 @@
     <div class='customer-crud-section section section--height-auto'>
       <h2 class='section-title'>Customers CRUD</h2>
       <form class='customer-crud-search-form form form--big'>
-        <div class='form-group'>
-          <button class='customer-crud-search-form__add-button button button--red button--size-medium'>Add Record</button>
-          <button class='customer-crud-searh-form__bulk-delete button button--red button--size-medium'>Bulk Delete</button>
+        <div class='form-group form-group--flex-wrap'>
+          <div class='crud-form-action-buttons'>
+            <button class='customer-crud-search-form__add-button button button--red button--size-medium'>Add Record</button>
+            <button class='customer-crud-searh-form__bulk-delete button button--red button--size-medium'>Bulk Delete</button>
+          </div>
+          
           <label>Search:</label>
-          <input class='customer-crud-search-form__search-input form-input'>
+          <input class='customer-crud-search-form__search-input form-input form-input--search-input'>
           <button class='customer-crud-search-form__search-button search-button background-image-button'>
             <!-- <img src='img/loupe.png' class='customer-crud-form__'> -->
           </button>
