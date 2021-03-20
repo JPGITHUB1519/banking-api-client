@@ -10,6 +10,10 @@ const getAccountsCardsDOMString = (accountsData) => {
     let accountCardDOMString = `
       <div class='account-card card'>
         <p class='card-detail'>
+          <span class='bold'>Account Number: </span>
+          <span class='account-card__name'>${accountData.id}</span>
+        </p>
+        <p class='card-detail'>
           <span class='bold'>Account Name: </span>
           <span class='account-card__name'>${accountData.name}</span>
         </p>
