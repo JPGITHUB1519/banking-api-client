@@ -27,10 +27,10 @@ export const makeTransaction = async () => {
       );
     } 
 
-    if (transactionResult.transactionStatus === 'successfull') {
+    if (transactionResult.transactionStatus === 'successful') {
       alertView.successAlert(
         DOM.transactionAlertContainer,
-        transactionView.successfullTransactionDOMString(transactionResult)
+        transactionView.successfulTransactionDOMString(transactionResult)
       );
     }
     // transactionView.showTransactionAlert(transactionResult);

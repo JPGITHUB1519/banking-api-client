@@ -1,7 +1,7 @@
 import { DOM } from './base';
 import currency from 'currency.js';
 
-export const successfullTransactionDOMString = transactionData => {
+export const successfulTransactionDOMString = transactionData => {
   const listItemsDomString = Object.entries(transactionData.data).map(element => {
     let [key, value] = element;
 
