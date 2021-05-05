@@ -50,19 +50,29 @@ export default class Customer {
 
   // delete in bulk
   async deleteCustomers(ids) {
+    // attempt #1 Wrong
     // const responses = await Promise.all(ids.map(async (id) => {
     //   const response = await this.deleteCustomer(id);
     //   return response;
     // }));
 
+    // attempt #2 WRONG! - awaiting individually, the await should be in Promise.all
     // returns an array of promises
-    let responses = ids.map(async (id) => {
-      const response = await this.deleteCustomer(id);
-      return response;
+    // let responses = ids.map(async (id) => {
+    //   this is inneficient do not do this, we are awaiting individually before Promise.All, 
+    //   the await should only be in Promise.all
+    //   const response = await this.deleteCustomer(id);
+    //   return response;
+    // });
+
+    // attempt #3 - correct!
+    const promises = ids.map(async (id) => {
+      // returning promises to be used in promise all
+      return this.deleteCustomer(id);
     });
 
     // returns a single Promise that resolves to an array of the results of the promises
-    responses = await Promise.all(responses);
+    const responses = await Promise.all(promises);
     return responses;
   }
 }
